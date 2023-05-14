@@ -22,19 +22,7 @@ public class DataGenerator {
             .log(LogDetail.ALL)
             .build();
 
-    @BeforeAll
-    static void setUpAll() {
-        // сам запрос
-        given()
-                .spec(requestSpec)
-                .body(new RegistrationDto("vasya", "password", "active"))
-                .when()
-                .post("/api/system/users")
-                .then()
-                .statusCode(200);
-    }
-
-    private static final Faker faker = new Faker(new Locale("ru"));
+        private static final Faker faker = new Faker(new Locale("en"));
 
     private DataGenerator() {
     }
